@@ -249,3 +249,4 @@ MIT License - xem [LICENSE](LICENSE) file
 **🎯 Made with ❤️ for Medlatec Portal Quality Assurance**
 "# medlatec-testing-framework" 
 "# medTesst" 
+"# medTesst" 

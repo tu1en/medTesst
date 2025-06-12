@@ -1,0 +1,248 @@
+<testsuites id="" name="" tests="12" failures="7" skipped="0" errors="0" time="443.71752999999995">
+<testsuite name="login-functionality\login.successful.spec.ts" timestamp="2025-06-12T10:52:30.546Z" hostname="chromium" tests="3" failures="1" skipped="0" time="34.823" errors="0">
+<testcase name="Login Functionality - Successful Login › TC001 - Successful login with valid credentials" classname="login-functionality\login.successful.spec.ts" time="14.128">
+<failure message="login.successful.spec.ts:11:7 TC001 - Successful login with valid credentials" type="FAILURE">
+<![CDATA[  [chromium] › login-functionality\login.successful.spec.ts:11:7 › Login Functionality - Successful Login › TC001 - Successful login with valid credentials 
+
+    Error: Timed out 5000ms waiting for expect(page).toHaveTitle(expected)
+
+    Locator: locator(':root')
+    Expected pattern: /.*[Ll]ogin|.*[Mm]edlatec/
+    Received string:  "Đăng nhập - MEDLATEC Portal"
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+      - waiting for locator(':root')
+        8 × locator resolved to <html class="" lang="en">…</html>
+          - unexpected value "Đăng nhập - MEDLATEC Portal"
+
+
+      15 |     // Verify page loaded successfully
+      16 |     await expect(page).toHaveURL(/.*\/login/);
+    > 17 |     await expect(page).toHaveTitle(/.*[Ll]ogin|.*[Mm]edlatec/);
+         |                        ^
+      18 |     
+      19 |     // Take initial screenshot
+      20 |     await loginPage.takeScreenshot('01-login-page-loaded');
+        at c:\Users\darky\Downloads\med\tests\login-functionality\login.successful.spec.ts:17:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\login-functionality-login.-a2925-ogin-with-valid-credentials-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\login-functionality-login.-a2925-ogin-with-valid-credentials-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-functionality-login.-a2925-ogin-with-valid-credentials-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login-functionality-login.-a2925-ogin-with-valid-credentials-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|login-functionality-login.-a2925-ogin-with-valid-credentials-chromium\video.webm]]
+
+[[ATTACHMENT|login-functionality-login.-a2925-ogin-with-valid-credentials-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Functionality - Successful Login › TC002 - Verify login form elements and accessibility" classname="login-functionality\login.successful.spec.ts" time="10.145">
+</testcase>
+<testcase name="Login Functionality - Successful Login › TC003 - Login form keyboard interaction" classname="login-functionality\login.successful.spec.ts" time="10.55">
+</testcase>
+</testsuite>
+<testsuite name="login-functionality\login.successful.spec.ts" timestamp="2025-06-12T10:52:30.546Z" hostname="firefox" tests="3" failures="2" skipped="0" time="95.961" errors="0">
+<testcase name="Login Functionality - Successful Login › TC001 - Successful login with valid credentials" classname="login-functionality\login.successful.spec.ts" time="30.025">
+<failure message="login.successful.spec.ts:11:7 TC001 - Successful login with valid credentials" type="FAILURE">
+<![CDATA[  [firefox] › login-functionality\login.successful.spec.ts:11:7 › Login Functionality - Successful Login › TC001 - Successful login with valid credentials 
+
+    Test timeout of 30000ms exceeded while running "beforeEach" hook.
+
+       5 |   let loginPage;
+       6 |
+    >  7 |   test.beforeEach(async ({ page }) => {
+         |        ^
+       8 |     loginPage = new LoginPage(page);
+       9 |   });
+      10 |
+        at c:\Users\darky\Downloads\med\tests\login-functionality\login.successful.spec.ts:7:8
+
+    TypeError: Cannot read properties of null (reading 'url')
+
+      154 |   test.afterEach(async ({ page }) => {
+      155 |     // Cleanup: try to logout if we're logged in
+    > 156 |     const currentUrl = page.url();
+          |                             ^
+      157 |     if (!currentUrl.includes('/login')) {
+      158 |       try {
+      159 |         const logoutButton = page.locator('a:has-text("Logout"), button:has-text("Logout"), .logout');
+        at c:\Users\darky\Downloads\med\tests\login-functionality\login.successful.spec.ts:156:29
+
+    Error: browserContext.newPage: Test timeout of 30000ms exceeded.
+]]>
+</failure>
+</testcase>
+<testcase name="Login Functionality - Successful Login › TC002 - Verify login form elements and accessibility" classname="login-functionality\login.successful.spec.ts" time="5.928">
+</testcase>
+<testcase name="Login Functionality - Successful Login › TC003 - Login form keyboard interaction" classname="login-functionality\login.successful.spec.ts" time="60.008">
+<failure message="login.successful.spec.ts:131:7 TC003 - Login form keyboard interaction" type="FAILURE">
+<![CDATA[  [firefox] › login-functionality\login.successful.spec.ts:131:7 › Login Functionality - Successful Login › TC003 - Login form keyboard interaction 
+
+    Test timeout of 30000ms exceeded while running "beforeEach" hook.
+
+       5 |   let loginPage;
+       6 |
+    >  7 |   test.beforeEach(async ({ page }) => {
+         |        ^
+       8 |     loginPage = new LoginPage(page);
+       9 |   });
+      10 |
+        at c:\Users\darky\Downloads\med\tests\login-functionality\login.successful.spec.ts:7:8
+
+    TypeError: Cannot read properties of null (reading 'url')
+
+      154 |   test.afterEach(async ({ page }) => {
+      155 |     // Cleanup: try to logout if we're logged in
+    > 156 |     const currentUrl = page.url();
+          |                             ^
+      157 |     if (!currentUrl.includes('/login')) {
+      158 |       try {
+      159 |         const logoutButton = page.locator('a:has-text("Logout"), button:has-text("Logout"), .logout');
+        at c:\Users\darky\Downloads\med\tests\login-functionality\login.successful.spec.ts:156:29
+
+    Tearing down "context" exceeded the test timeout of 30000ms.
+
+    Error: browserContext._wrapApiCall: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> C:\Users\darky\AppData\Local\ms-playwright\firefox-1487\firefox\firefox.exe -no-remote -wait-for-browser -foreground -profile C:\Users\darky\AppData\Local\Temp\playwright_firefoxdev_profile-H9txrY -juggler-pipe -silent
+    <launched> pid=31352
+    [pid=31352][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 116: unreachable code after return statement
+    [pid=31352][out] console.warn: services.settings: Ignoring preference override of remote settings server
+    [pid=31352][out] console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+    [pid=31352][out] 
+    [pid=31352][out] Juggler listening to the pipe
+    [pid=31352][out] console.error: "Warning: unrecognized command line flag" "-foreground"
+    [pid=31352] <gracefully close start>
+    [pid=31352] <kill>
+    [pid=31352] <will force kill>
+    [pid=31352] taskkill stderr: ERROR: This operation returned because the timeout period expired.
+
+
+    Error: browserContext.newPage: Test timeout of 30000ms exceeded.
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="login-functionality\login.successful.spec.ts" timestamp="2025-06-12T10:52:30.546Z" hostname="webkit" tests="3" failures="3" skipped="0" time="13.945" errors="0">
+<testcase name="Login Functionality - Successful Login › TC001 - Successful login with valid credentials" classname="login-functionality\login.successful.spec.ts" time="6.299">
+<failure message="login.successful.spec.ts:11:7 TC001 - Successful login with valid credentials" type="FAILURE">
+<![CDATA[  [webkit] › login-functionality\login.successful.spec.ts:11:7 › Login Functionality - Successful Login › TC001 - Successful login with valid credentials 
+
+    Error: browserContext.newPage: Target page, context or browser has been closed
+]]>
+</failure>
+</testcase>
+<testcase name="Login Functionality - Successful Login › TC002 - Verify login form elements and accessibility" classname="login-functionality\login.successful.spec.ts" time="5.16">
+<failure message="login.successful.spec.ts:95:7 TC002 - Verify login form elements and accessibility" type="FAILURE">
+<![CDATA[  [webkit] › login-functionality\login.successful.spec.ts:95:7 › Login Functionality - Successful Login › TC002 - Verify login form elements and accessibility 
+
+    Error: page.goto: Page crashed
+    Call log:
+      - navigating to "https://medlatec-portal-fe.vercel.app/login", waiting until "load"
+
+
+       at ..\utils\LoginPage.js:19
+
+      17 |   
+      18 |   async navigate() {
+    > 19 |     await this.page.goto('https://medlatec-portal-fe.vercel.app/login');
+         |                     ^
+      20 |     await this.page.waitForLoadState('networkidle');
+      21 |   }
+      22 |   
+        at LoginPage.navigate (c:\Users\darky\Downloads\med\utils\LoginPage.js:19:21)
+        at c:\Users\darky\Downloads\med\tests\login-functionality\login.successful.spec.ts:96:21
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\login-functionality-login.-38214--elements-and-accessibility-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login-functionality-login.-38214--elements-and-accessibility-webkit\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Functionality - Successful Login › TC003 - Login form keyboard interaction" classname="login-functionality\login.successful.spec.ts" time="2.486">
+<failure message="login.successful.spec.ts:131:7 TC003 - Login form keyboard interaction" type="FAILURE">
+<![CDATA[  [webkit] › login-functionality\login.successful.spec.ts:131:7 › Login Functionality - Successful Login › TC003 - Login form keyboard interaction 
+
+    Error: browserContext.newPage: Protocol error (Screencast.startVideo): Failed to initialize encoder: Memory allocation error
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\login-functionality-login.-4c9fa-n-form-keyboard-interaction-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login-functionality-login.-4c9fa-n-form-keyboard-interaction-webkit\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="login-functionality\login.successful.spec.ts" timestamp="2025-06-12T10:52:30.546Z" hostname="mobile-chrome" tests="3" failures="1" skipped="0" time="16.502" errors="0">
+<testcase name="Login Functionality - Successful Login › TC001 - Successful login with valid credentials" classname="login-functionality\login.successful.spec.ts" time="10.94">
+<failure message="login.successful.spec.ts:11:7 TC001 - Successful login with valid credentials" type="FAILURE">
+<![CDATA[  [mobile-chrome] › login-functionality\login.successful.spec.ts:11:7 › Login Functionality - Successful Login › TC001 - Successful login with valid credentials 
+
+    Error: Timed out 5000ms waiting for expect(page).toHaveTitle(expected)
+
+    Locator: locator(':root')
+    Expected pattern: /.*[Ll]ogin|.*[Mm]edlatec/
+    Received string:  "Đăng nhập - MEDLATEC Portal"
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+      - waiting for locator(':root')
+        9 × locator resolved to <html class="" lang="en">…</html>
+          - unexpected value "Đăng nhập - MEDLATEC Portal"
+
+
+      15 |     // Verify page loaded successfully
+      16 |     await expect(page).toHaveURL(/.*\/login/);
+    > 17 |     await expect(page).toHaveTitle(/.*[Ll]ogin|.*[Mm]edlatec/);
+         |                        ^
+      18 |     
+      19 |     // Take initial screenshot
+      20 |     await loginPage.takeScreenshot('01-login-page-loaded');
+        at c:\Users\darky\Downloads\med\tests\login-functionality\login.successful.spec.ts:17:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\login-functionality-login.-a2925-ogin-with-valid-credentials-mobile-chrome\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\login-functionality-login.-a2925-ogin-with-valid-credentials-mobile-chrome\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-functionality-login.-a2925-ogin-with-valid-credentials-mobile-chrome\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login-functionality-login.-a2925-ogin-with-valid-credentials-mobile-chrome\test-failed-1.png]]
+
+[[ATTACHMENT|login-functionality-login.-a2925-ogin-with-valid-credentials-mobile-chrome\video.webm]]
+
+[[ATTACHMENT|login-functionality-login.-a2925-ogin-with-valid-credentials-mobile-chrome\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Functionality - Successful Login › TC002 - Verify login form elements and accessibility" classname="login-functionality\login.successful.spec.ts" time="2.546">
+</testcase>
+<testcase name="Login Functionality - Successful Login › TC003 - Login form keyboard interaction" classname="login-functionality\login.successful.spec.ts" time="3.016">
+</testcase>
+</testsuite>
+</testsuites>

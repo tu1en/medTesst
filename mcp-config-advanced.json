@@ -1,0 +1,31 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest",
+        "--headless",
+        "--browser", "chrome",
+        "--viewport-size", "1920,1080"
+      ]
+    },
+    "playwright-vision": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest",
+        "--vision",
+        "--browser", "chrome",
+        "--device", "Desktop Chrome"
+      ]
+    },
+    "playwright-isolated": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest",
+        "--isolated",
+        "--headless",
+        "--browser", "firefox"
+      ]
+    }
+  }
+}

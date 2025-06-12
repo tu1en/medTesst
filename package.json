@@ -1,0 +1,52 @@
+{
+  "name": "medlatec-portal-testing",
+  "version": "1.0.0",
+  "description": "Comprehensive testing suite for Medlatec Portal",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report",
+    "mcp": "node scripts/mcp-test-runner.js",
+    "mcp:login": "node scripts/mcp-test-runner.js --suite login",
+    "mcp:cms": "node scripts/mcp-test-runner.js --suite cms",
+    "mcp:partner": "node scripts/mcp-test-runner.js --suite partner",
+    "mcp:collection": "node scripts/mcp-test-runner.js --suite collection",
+    "mcp:coll": "node scripts/mcp-test-runner.js --suite collection",
+    "mcp:patient": "node scripts/mcp-test-runner.js --suite patient",
+    "mcp:user": "node scripts/mcp-test-runner.js --suite user",
+    "mcp:appointment": "node scripts/mcp-test-runner.js --suite appointment",
+    "mcp:reports": "node scripts/mcp-test-runner.js --suite reports",
+    "mcp:settings": "node scripts/mcp-test-runner.js --suite settings",
+    "test:cms": "playwright test tests/cms-module/",
+    "test:partner": "playwright test tests/partner-module/",
+    "test:collection": "playwright test tests/collection-module/",
+    "test:coll": "playwright test tests/collection-module/",
+    "test:login": "playwright test tests/login-functionality/",
+    "test:patient": "playwright test tests/patient-management/",
+    "test:user": "playwright test tests/user-management/",
+    "test:dashboard": "playwright test tests/dashboard-functionality/",
+    "comprehensive": "node scripts/comprehensive-test-runner.js",
+    "explore": "node scripts/explore-website.js",
+    "setup": "npx playwright install && npm install",
+    "clean": "rimraf test-results evidence playwright-report",
+    "lint": "eslint tests/ scripts/ --ext .js,.ts",
+    "validate": "npm run lint && npm run test:login"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "xlsx": "^0.18.5"
+  },
+  "author": "Test Team",
+  "license": "MIT",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "dependencies": {
+    "playwright": "^1.53.0"
+  }
+}
